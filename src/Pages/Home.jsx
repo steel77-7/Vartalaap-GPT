@@ -87,22 +87,32 @@ function Home() {
                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
               </svg>
               <div className="py-4">Examples</div>
-              <button className="bg-gray-600 hover:bg-gray-700 px-4 py-4 my-2 mx-4 rounded-md w-[16vw] text-sm"
-              onClick={()=>{
-                setPromptValue("Explain quantum computing in simple terms")
-              }}>
+              <button
+                className="bg-gray-600 hover:bg-gray-700 px-4 py-4 my-2 mx-4 rounded-md w-[16vw] text-sm"
+                onClick={() => {
+                  setPromptValue("Explain quantum computing in simple terms");
+                }}
+              >
                 "Explain quantum computing in simple terms" →
               </button>
-              <button className="bg-gray-600 hover:bg-gray-700 px-4 py-4 my-2 mx-4 rounded-md w-[16vw] text-sm"
-               onClick={()=>{
-                setPromptValue("Got any creative ideas for a 10 year old’s birthday?")
-              }}>
+              <button
+                className="bg-gray-600 hover:bg-gray-700 px-4 py-4 my-2 mx-4 rounded-md w-[16vw] text-sm"
+                onClick={() => {
+                  setPromptValue(
+                    "Got any creative ideas for a 10 year old’s birthday?"
+                  );
+                }}
+              >
                 "Got any creative ideas for a 10 year old’s birthday?" →
               </button>
-              <button className="bg-gray-600 hover:bg-gray-700 px-4 py-4 my-2 mx-4 rounded-md w-[16vw] text-sm"
-               onClick={()=>{
-                setPromptValue("How do I make an HTTP request in Javascript?")
-              }}>
+              <button
+                className="bg-gray-600 hover:bg-gray-700 px-4 py-4 my-2 mx-4 rounded-md w-[16vw] text-sm"
+                onClick={() => {
+                  setPromptValue(
+                    "How do I make an HTTP request in Javascript?"
+                  );
+                }}
+              >
                 "How do I make an HTTP request in Javascript?" →
               </button>
             </div>
@@ -163,30 +173,32 @@ function Home() {
             </div>
           </div>
           <div className="input w-full text-center">
-            <input
-              type="text"
-              className="w-[50%] dark:shadow-[0_0_15px_rgba(0,0,0,0.10)] shadow-[0_0_10px_rgba(0,0,0,0.10)] p-2 bg-transparent overflow-y-hidden rounded-md outline-none"
-              placeholder="Send a message"
-              value={promptValue}
-              onChange={onChange}
-            />
-            <button className="relative -left-20 p-10">
-              <svg
-                stroke="currentColor"
-                fill="none"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-4 w-4 mr-1"
-                height="1em"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-              </svg>
-            </button>
+            <form>
+              <input
+                type="text"
+                className="w-[50%] dark:shadow-[0_0_15px_rgba(0,0,0,0.10)] shadow-[0_0_10px_rgba(0,0,0,0.10)] p-2 bg-transparent overflow-y-hidden rounded-md outline-none"
+                placeholder="Send a message"
+                value={promptValue}
+                onChange={onChange}
+              />
+              <button className="relative -left-20 p-10" type="submit">
+                <svg
+                  stroke="currentColor"
+                  fill="none"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-4 w-4 mr-1"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
             <div className="text-sm">
               <p className="opacity-70">
                 Free Research Preview. ChatGPT may produce inaccurate
