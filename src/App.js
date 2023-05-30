@@ -8,6 +8,7 @@ import Main from "./Components/Main"
 import Home from './Pages/Home';
 import Login from "./Pages/Login"
 import SignUp from "./Pages/SignUp"
+import ForgotPassword from "./Pages/ForgotPassword"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PrivateRoute from './Components/PrivateRoute';
@@ -23,6 +24,7 @@ function App() {
           </Route>
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/signup' element={<SignUp />} />
+          <Route exact path='/forgot-password' element={<ForgotPassword />} />
         </Routes>
       </Router>
       <ToastContainer

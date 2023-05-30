@@ -21,6 +21,7 @@ function Home() {
       navigate("/");
       setLoading(false);
     } catch {
+      setLoading(false);
       toast.error("Can't logout");
     }
   };
