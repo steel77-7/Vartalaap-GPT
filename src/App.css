@@ -3,6 +3,12 @@
   padding: 0;
 }
 
-body{
-  background: rgb(52, 53, 65);
+.inp{
+  border: 1px solid gray;
+}
+
+.button{
+  border: 1px solid white;
+  padding: 10px 0;
+  top: 34.8rem
 }
