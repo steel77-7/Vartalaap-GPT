@@ -6,3 +6,7 @@
 body{
   background: rgb(52, 53, 65);
 }
+
+.inp{
+  border: 1px solid gray;
+}
