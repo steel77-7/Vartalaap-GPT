@@ -1,15 +1,37 @@
 import React, { useState } from "react";
+import { getAuth } from "firebase/auth";
+import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
+import Spinner from "../Components/Spinner";
 
 function Home() {
+  const [loading, setLoading] = useState(false);
+  const auth = getAuth();
+  const navigate = useNavigate();
   const [promptValue, setPromptValue] = useState("");
 
   const onChange = (e) => {
     setPromptValue(e.target.value);
   };
 
+  const onLogout = () => {
+    try {
+      setLoading(true);
+      auth.signOut();
+      navigate("/");
+      setLoading(false);
+    } catch {
+      toast.error("Can't logout");
+    }
+  };
+
+  if (loading) {
+    return <Spinner />;
+  }
+
   return (
     <>
-      <div className="flex h-[100vh] text-white">
+      <div className="flex h-[100vh] text-white bg-chatblack">
         <div className="left bg-sideBlock w-2/12">
           <button className="p-2 w-full font-semibold">
             <a className="flex py-3 px-3 items-center gap-3 transition-colors duration-200 text-white cursor-pointer text-sm rounded-md border border-white/20 hover:bg-gray-500/10 mb-1 flex-shrink-0">
@@ -57,6 +79,12 @@ function Home() {
               </li>
             </ol>
           </div>
+          <button
+            className="w-full text-center border-solid bg-transparent button font-semibold hover:bg-textColor rounded-sm relative"
+            onClick={onLogout}
+          >
+            Log Out
+          </button>
         </div>
         <div className="right w-10/12 flex items-center justify-center flex-col">
           <div className="text-4xl w-full text-center font-bold my-5">

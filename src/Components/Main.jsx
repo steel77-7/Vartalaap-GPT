@@ -1,8 +1,12 @@
 import React from "react";
 import logo from "../Assets/logo.png";
 import { useNavigate } from "react-router";
+import { useAuthStatus } from "../hooks/useAuthStatus";
+import Home from "../Pages/Home";
+import Spinner from "./Spinner";
 
 function Main() {
+  const { loggedin, checkingStatus } = useAuthStatus();
   const navigate = useNavigate();
 
   const renderLogin = () => {
@@ -13,9 +17,16 @@ function Main() {
     navigate("/signup");
   };
 
+  if (checkingStatus) {
+    return <Spinner />;
+  }
+
+  if (loggedin === true && checkingStatus === false) {
+    return <Home />;
+  }
   return (
     <>
-      <main className="h-[100vh] w-[100%]">
+      <main className="h-[100vh] w-[100%] bg-chatblack">
         <div className="text-white flex justify-center items-center flex-col h-[100vh] w-[100%] ">
           <img src={logo} className="w-[5%]" />
           <h1>Welcome to ChatGPT</h1>
