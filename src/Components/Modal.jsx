@@ -12,6 +12,9 @@ function Modal() {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    if (key.length < 51) {
+      return toast.error("Invalid API KEY");
+    }
     localStorage.setItem("key", key);
     toast.success("Key added successfully");
     navigate("/home");
