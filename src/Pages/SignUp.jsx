@@ -70,6 +70,7 @@ const SignUp = () => {
       setLoading(false);
       toast.success("Successfully Signed Up");
     } catch (error) {
+      setLoading(false);
       toast.error("Could Not Sign Up!!");
     }
   };

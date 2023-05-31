@@ -9,6 +9,7 @@ import { useAuthStatus } from "../hooks/useAuthStatus";
 
 // Importing Spinner component
 import Spinner from "../Components/Spinner";
+import Home from "../Pages/Home";
 
 function PrivateRoute() {
   // Getting it from custom hook
@@ -18,7 +19,7 @@ function PrivateRoute() {
     return <Spinner />;
   }
   // If loggedin is true then render Outlet otherwise navigate to sign in
-  return loggedin ? <Outlet></Outlet> : <Navigate to="/login" />;
+  return loggedin ? <Home></Home> : <Navigate to="/" />;
 }
 
 export default PrivateRoute;

@@ -59,6 +59,7 @@ function Login() {
         toast.error("Invalid user credentials");
       }
     } catch (error) {
+      setLoading(false);
       toast.error("Invalid user credemtials");
     }
   };
@@ -118,6 +119,11 @@ function Login() {
                 onClick={handleClick}
               />
             )}
+          </div>
+          <div className="mt-2">
+            <p className="text-btnColor">
+              <Link to={"/forgot-password"}>Forgot Password?</Link>
+            </p>
           </div>
           <button
             type="submit"
