@@ -15,7 +15,7 @@ function Input(props) {
 
   return (
     <>
-      <div className="input w-full text-center">
+      <div className="input w-full text-center sticky">
         <form onSubmit={onSubmit}>
           <input
             type="text"
