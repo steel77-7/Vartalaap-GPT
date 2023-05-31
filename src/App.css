@@ -12,3 +12,7 @@
   padding: 10px 0;
   top: 34.8rem
 }
+
+.main::-webkit-scrollbar {
+  display: none;
+}
