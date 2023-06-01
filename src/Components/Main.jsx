@@ -28,7 +28,7 @@ function Main() {
     <>
       <main className="h-[100vh] w-[100%] bg-chatblack">
         <div className="text-white flex justify-center items-center flex-col h-[100vh] w-[100%] ">
-          <img src={logo} className="w-[5%]" />
+          <img src={logo} className="w-[5rem]" />
           <h1>Welcome to ChatGPT</h1>
           <h1>Log in with your OpenAI account to continue</h1>
           <div className="flex justify-center items-center mt-4">
