@@ -47,7 +47,7 @@ function ForgotPassword() {
       <header className="flex justify-center items-center mb-16">
         <img
           src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ0J_WUW3a11ND1TGZzbRPS36dxxKl-R9LOyA7zfacg-6Hi9040"
-          className="w-[4.5%] mt-4"
+          className="w-[4.5rem] mt-4"
         />
       </header>
       <div className="flex justify-center items-center flex-col mt-28 ">
@@ -63,11 +63,11 @@ function ForgotPassword() {
             type="email"
             required
             placeholder="Email Address"
-            className="bg-bgColor mt-5 w-[25%] px-2 py-3  rounded-sm  outline-none inp"
+            className="bg-bgColor mt-5 w-[25rem] px-2 py-3  rounded-sm  outline-none inp"
           />
           <button
             type="submit"
-            className="mt-4 bg-btnColor hover:bg-hoverbtnColor mx-2 text-white font-semibold py-2 px-4 rounded w-[25%]"
+            className="mt-4 bg-btnColor hover:bg-hoverbtnColor mx-2 text-white font-semibold py-2 px-4 rounded w-[25rem]"
           >
             Recover Account
           </button>

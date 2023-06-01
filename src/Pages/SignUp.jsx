@@ -88,7 +88,7 @@ const SignUp = () => {
         <header className="flex justify-center items-center mb-16">
           <img
             src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ0J_WUW3a11ND1TGZzbRPS36dxxKl-R9LOyA7zfacg-6Hi9040"
-            className="w-[4.5%] mt-4"
+            className="w-[4.5rem] mt-4"
           />
         </header>
         <div className="flex justify-center items-center flex-col mt-28 ">
@@ -106,7 +106,7 @@ const SignUp = () => {
               type="text"
               required
               placeholder="Enter your name"
-              className="bg-bgColor mt-5 w-[25%] px-2 py-3  rounded-sm  outline-none inp"
+              className="bg-bgColor mt-5 w-[25rem] px-2 py-3  rounded-sm  outline-none inp"
             />
             <input
               id="email"
@@ -115,12 +115,12 @@ const SignUp = () => {
               type="email"
               required
               placeholder="Email Address"
-              className="bg-bgColor mt-5 w-[25%] px-2 py-3  rounded-sm  outline-none inp"
+              className="bg-bgColor mt-5 w-[25rem] px-2 py-3  rounded-sm  outline-none inp"
             />
-            <div className="relative w-full flex justify-center items-center">
+            <div className="relative">
               <input
                 type={setpassword ? "text" : "password"}
-                className="bg-bgColor mt-5 w-[25%] px-2 py-3  rounded-sm  outline-none inp"
+                className="bg-bgColor mt-5 w-[25rem] px-2 py-3  rounded-sm  outline-none inp"
                 placeholder="Password"
                 id="password"
                 min={8}
@@ -131,20 +131,20 @@ const SignUp = () => {
               {setpassword ? (
                 <FontAwesomeIcon
                   icon={faEyeSlash}
-                  className="absolute right-[36.75rem] top-9 cursor-pointer text-xl "
+                  className="absolute right-2 top-9 cursor-pointer text-xl "
                   onClick={handleClick}
                 />
               ) : (
                 <FontAwesomeIcon
                   icon={faEye}
-                  className=" absolute right-[36.75rem] top-9 cursor-pointer text-xl"
+                  className=" absolute right-2 top-9 cursor-pointer text-xl"
                   onClick={handleClick}
                 />
               )}
             </div>
             <button
               type="submit"
-              className="mt-4 bg-btnColor hover:bg-hoverbtnColor mx-2 text-white font-semibold py-2 px-4 rounded w-[25%]"
+              className="mt-4 bg-btnColor hover:bg-hoverbtnColor mx-2 text-white font-semibold py-2 px-4 rounded w-[25rem]"
             >
               Sign up
             </button>
