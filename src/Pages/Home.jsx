@@ -3,7 +3,6 @@ import { getAuth } from "firebase/auth";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import Spinner from "../Components/Spinner";
-import Modal from "../Components/Modal";
 import Default from "../Components/Default";
 import Input from "../Components/Input";
 import ChatContext from "../context/ChatContext";
@@ -38,25 +37,15 @@ function Home() {
     return <Spinner />;
   }
 
-  if (
-    localStorage.getItem("key") === "" ||
-    localStorage.getItem("key") === null
-  ) {
-    return <Modal />;
-  }
-
   return (
     <>
       <div className="flex h-[100vh] text-white bg-chatblack ">
         <div className="left bg-sideBlock w-2/12 h-[100%] fixed ">
           <button
             className="p-2 w-full font-semibold"
-            onClick={() => {
-              navigate("/modal");
-            }}
           >
             <a className="flex py-3 px-3 items-center gap-3 transition-colors duration-200 text-white cursor-pointer text-sm rounded-md border border-white/20 hover:bg-gray-500/10 mb-1 flex-shrink-0">
-              Change API KEY
+              New Chat
             </a>
           </button>
           <div className="chats">

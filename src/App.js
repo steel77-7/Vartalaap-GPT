@@ -13,7 +13,6 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PrivateRoute from './Components/PrivateRoute';
 import ChatState from './context/ChatState';
-import Modal from './Components/Modal';
 
 function App() {
   return (
@@ -27,7 +26,6 @@ function App() {
             </Route>
             <Route exact path='/login' element={<Login />} />
             <Route exact path='/signup' element={<SignUp />} />
-            <Route exact path='/modal' element={<Modal />} />
             <Route exact path='/forgot-password' element={<ForgotPassword />} />
           </Routes>
         </Router>
