@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { getAuth } from "firebase/auth";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
@@ -12,11 +12,14 @@ import Chat from "../Components/Chat";
 function Home() {
   const context = useContext(ChatContext);
   const [loading, setLoading] = useState(false);
+  const [question, setQuestion] = useState("");
+  const [answer, setAnswer] = useState("");
+  const [chatLoader,setChatLoader] = useState(false)
   const [renderChat, setRenderChat] = useState(false);
   const auth = getAuth();
   const navigate = useNavigate();
   const [promptValue, setPromptValue] = useState("");
-  const { generateText } = context;
+  const { generateText, Loading } = context;
 
   const onLogout = () => {
     try {
@@ -44,8 +47,8 @@ function Home() {
 
   return (
     <>
-      <div className="flex h-[100vh] text-white bg-chatblack">
-        <div className="left bg-sideBlock w-2/12">
+      <div className="flex h-[100vh] text-white bg-chatblack ">
+        <div className="left bg-sideBlock w-2/12 h-[100%] fixed ">
           <button
             className="p-2 w-full font-semibold"
             onClick={() => {
@@ -89,17 +92,20 @@ function Home() {
             Log Out
           </button>
         </div>
-        <div className="right w-10/12 flex items-center justify-center flex-col">
+        <div className="right w-10/12 flex items-center justify-center flex-col h-[100%] ml-[15%]">
           {renderChat === false ? (
-            <Default setPromptValue={setPromptValue} />
+            <Default setPromptValue={setPromptValue} answer={answer} />
           ) : (
-            <Chat />
+            <Chat question={question} answer={answer} chatLoader={chatLoader}/>
           )}
           <Input
             setPromptValue={setPromptValue}
+            setQuestion={setQuestion}
+            setAnswer={setAnswer}
             promptValue={promptValue}
             generateText={generateText}
             setRenderChat={setRenderChat}
+            setChatLoader = {setChatLoader}
           />
         </div>
       </div>

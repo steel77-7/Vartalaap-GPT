@@ -1,21 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 
 function Input(props) {
-  const { promptValue, setPromptValue, generateText, setRenderChat } = props;
+  const {
+    promptValue,
+    setPromptValue,
+    generateText,
+    setRenderChat,
+    setQuestion,
+    setAnswer,
+    setChatLoader,
+  } = props;
 
   const onChange = (e) => {
     setPromptValue(e.target.value);
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    setRenderChat(true)
-    generateText();
+    setChatLoader(true)
+    setRenderChat(true);
+    setQuestion(promptValue);
+    let a = await generateText(promptValue);
+    setAnswer(a);
+    setChatLoader(false)
   };
 
   return (
     <>
-      <div className="input w-full text-center sticky">
+      <div className="input w-full text-center ">
         <form onSubmit={onSubmit}>
           <input
             type="text"

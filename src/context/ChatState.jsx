@@ -1,6 +1,7 @@
 import ChatContext from "./ChatContext";
 import { Configuration, OpenAIApi } from "openai";
-import React from "react";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const api_key = localStorage.getItem("key");
 
@@ -10,17 +11,17 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-const generateText = async () => {
+const generateText = async (prompt) => {
   try {
     const response = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: "How are you",
+      prompt: prompt,
       temperature: 1,
       max_tokens: 2048,
     });
-    console.log(response.data.choices[0].text);
+    return response.data.choices[0].text;
   } catch (e) {
-    console.log(e);
+    return "Can't Get Result!!";
   }
 };
 
