@@ -55,8 +55,8 @@ function OAuth() {
 
   return (
     <button
-      className="w-[25%] bg-bgColor text-textColor px-7 py-3 text-sm font-medium uppercase border rounded shadow-md transition duration-150 mt- hover:shadow-lg flex justify-center items-center"
-      type="button"
+      className="w-[25rem] bg-bgColor text-textColor px-7 py-3 text-sm font-medium uppercase border rounded shadow-md transition duration-150 mt- hover:shadow-lg flex justify-center items-center"
+      type="button]"
       onClick={onClick}
     >
       <img src={Google} alt="google" className="w-8 mx-2" />

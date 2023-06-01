@@ -1,9 +1,8 @@
 import ChatContext from "./ChatContext";
 import { Configuration, OpenAIApi } from "openai";
-import React, { useState } from "react";
-import { toast } from "react-toastify";
+import React from "react";
 
-const api_key = localStorage.getItem("key");
+const api_key = process.env.API_KEY;
 
 const configuration = new Configuration({
   apiKey: api_key,
