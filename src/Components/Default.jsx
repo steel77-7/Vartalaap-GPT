@@ -4,7 +4,7 @@ function Default(props) {
   const { setPromptValue } = props;
   return (
     <div>
-      <div className="text-4xl w-full text-center font-bold my-5">ChatGPT</div>
+      <div className="text-4xl w-full text-center font-bold my-14">ChatGPT</div>
       <div className="itemsrow flex py-4 w-[43vw] justify-around my-10">
         <div className="examples flex flex-col justify-center items-center">
           <svg
