@@ -7,14 +7,14 @@ import Default from "../Components/Default";
 import Input from "../Components/Input";
 import ChatContext from "../context/ChatContext";
 import Chat from "../Components/Chat";
-import Sidebar from "../Components/Sidebar"
+import Sidebar from "../Components/Sidebar";
 
 function Home() {
   const context = useContext(ChatContext);
   const [loading, setLoading] = useState(false);
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
-  const [chatLoader,setChatLoader] = useState(false)
+  const [chatLoader, setChatLoader] = useState(false);
   const [renderChat, setRenderChat] = useState(false);
   const auth = getAuth();
   const navigate = useNavigate();
@@ -40,15 +40,13 @@ function Home() {
 
   return (
     <>
-      <div className="flex h-[100vh] text-white bg-chatblack ">
-        <div className="left w-2/12 fixed ">
-          <Sidebar onLogout={onLogout}/>
-        </div>
-        <div className="right w-10/12 flex items-center justify-center flex-col h-[100%] ml-[15%]">
+      <Sidebar onLogout={onLogout} />
+      <div className="flex  text-white bg-chatblack justify-center items-center">
+        <div className="right  flex items-center justify-center flex-col h-[100%]">
           {renderChat === false ? (
             <Default setPromptValue={setPromptValue} answer={answer} />
           ) : (
-            <Chat question={question} answer={answer} chatLoader={chatLoader}/>
+            <Chat question={question} answer={answer} chatLoader={chatLoader} />
           )}
           <Input
             setPromptValue={setPromptValue}
@@ -57,7 +55,7 @@ function Home() {
             promptValue={promptValue}
             generateText={generateText}
             setRenderChat={setRenderChat}
-            setChatLoader = {setChatLoader}
+            setChatLoader={setChatLoader}
           />
         </div>
       </div>

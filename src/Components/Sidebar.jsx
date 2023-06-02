@@ -40,7 +40,7 @@ export default function PersistentDrawerRight(props) {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", color:"white" }}>
       <Toolbar>
         <IconButton
           color="inherit"
