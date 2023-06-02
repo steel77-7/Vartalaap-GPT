@@ -15,7 +15,7 @@ function Chat(props) {
         id="chatElement"
       >
         <div className="w-full hover:bg-gray-700 hover:trasition duration-75 ease-in-out">
-          <div className="mb-5 mt-3 flex justify-start items-center">
+          <div className="mb-5 mt-3 flex justify-start items-center ">
             <FontAwesomeIcon
               icon={faUser}
               className="mx-10 h-[26px] py-[12px] px-[14px] rounded-full border border-white"
