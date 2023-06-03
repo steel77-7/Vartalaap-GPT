@@ -35,10 +35,10 @@ function Input(props) {
           onSubmit={onSubmit}
         >
           <div className="relative ">
-            <input
+            <textarea
               value={promptValue}
               onChange={onChange}
-              className="dark:shadow-[0_0_15px_rgba(0,0,0,0.10)] shadow-[0_0_10px_rgba(0,0,0,0.10)] p-2 bg-transparent overflow-y-hidden rounded-md outline-none w-full"
+              className="dark:shadow-[0_0_15px_rgba(0,0,0,0.10)] shadow-[0_0_10px_rgba(0,0,0,0.10)] p-2 bg-transparent overflow-x-hidden rounded-md outline-none w-full h-[2.75rem]"
               placeholder="Send a message"
               required
             />

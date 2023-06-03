@@ -42,10 +42,11 @@ function Home() {
     <>
       <Sidebar onLogout={onLogout} />
       <main className="flex justify-center items-center flex-col">
-        <div className="flex  text-white bg-chatblack justify-center items-center w-[55%]">
-          <div className="right  flex items-center justify-center flex-col h-[100%]">
+        <div className="flex text-white bg-chatblack justify-center items-center w-[100%]">
             {renderChat === false ? (
+              <div className="right  flex items-center justify-center flex-col h-[100%]">
               <Default setPromptValue={setPromptValue} answer={answer} />
+              </div>
             ) : (
               <Chat
                 question={question}
@@ -53,7 +54,6 @@ function Home() {
                 chatLoader={chatLoader}
               />
             )}
-          </div>
         </div>
         <Input
           setPromptValue={setPromptValue}

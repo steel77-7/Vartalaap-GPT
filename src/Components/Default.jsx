@@ -3,10 +3,10 @@ import React from "react";
 function Default(props) {
   const { setPromptValue } = props;
   return (
-    <div>
+    <div className="flex justify-center items-center flex-col">
       <div className="text-4xl w-full text-center font-bold my-10">ChatGPT</div>
-      <div className="itemsrow flex py-4 justify-around my-6 shortcuts">
-        <div className="examples flex flex-col justify-center items-center mr-3">
+      <div className="itemsrow flex py-4 justify-around my-6 shortcuts w-[55%] sm:w-[60%]">
+        <div className="examples flex flex-col justify-center items-center mr-3 ">
           <svg
             stroke="currentColor"
             fill="none"
@@ -30,7 +30,7 @@ function Default(props) {
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
           <p className="py-4">Examples</p>
-          <div className="flex justify-center items-center flex-col w-full sm:w-[60%] md:w-[85%] lg:w-[100%]">
+          <div className="flex justify-center items-center flex-col w-full ">
             <button
               className="bg-gray-600 hover:bg-gray-700 px-4 py-4 my-2 mx-4 rounded-md w-full text-sm shortcut-text"
               onClick={() => {
@@ -76,7 +76,7 @@ function Default(props) {
             ></path>
           </svg>
           <p className="py-4">Capabilities</p>
-          <div className="flex justify-center items-center flex-col w-full sm:w-[60%] md:w-[85%] lg:w-[100%]">
+          <div className="flex justify-center items-center flex-col w-full ">
             <button className="bg-gray-600 px-4 py-4 my-2 cursor-default mx-4 rounded-md w-full text-sm shortcut-text">
               Remembers what user said earlier in the conversation
             </button>
@@ -106,7 +106,7 @@ function Default(props) {
             <line x1="12" y1="17" x2="12.01" y2="17"></line>
           </svg>
           <p className="py-4">Limitations</p>
-          <div className="flex justify-center items-center flex-col w-full sm:w-[60%] md:w-[85%] lg:w-[100%]">
+          <div className="flex justify-center items-center flex-col w-full ">
             <button className="bg-gray-600 cursor-default px-4 py-4 my-2 mx-4 rounded-md w-full text-sm shortcut-text">
               May occasionally generate incorrect information
             </button>
