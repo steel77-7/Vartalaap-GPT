@@ -41,24 +41,30 @@ function Home() {
   return (
     <>
       <Sidebar onLogout={onLogout} />
-      <div className="flex  text-white bg-chatblack justify-center items-center">
-        <div className="right  flex items-center justify-center flex-col h-[100%]">
-          {renderChat === false ? (
-            <Default setPromptValue={setPromptValue} answer={answer} />
-          ) : (
-            <Chat question={question} answer={answer} chatLoader={chatLoader} />
-          )}
-          <Input
-            setPromptValue={setPromptValue}
-            setQuestion={setQuestion}
-            setAnswer={setAnswer}
-            promptValue={promptValue}
-            generateText={generateText}
-            setRenderChat={setRenderChat}
-            setChatLoader={setChatLoader}
-          />
+      <main className="flex justify-center items-center flex-col">
+        <div className="flex  text-white bg-chatblack justify-center items-center w-[55%]">
+          <div className="right  flex items-center justify-center flex-col h-[100%]">
+            {renderChat === false ? (
+              <Default setPromptValue={setPromptValue} answer={answer} />
+            ) : (
+              <Chat
+                question={question}
+                answer={answer}
+                chatLoader={chatLoader}
+              />
+            )}
+          </div>
         </div>
-      </div>
+        <Input
+          setPromptValue={setPromptValue}
+          setQuestion={setQuestion}
+          setAnswer={setAnswer}
+          promptValue={promptValue}
+          generateText={generateText}
+          setRenderChat={setRenderChat}
+          setChatLoader={setChatLoader}
+        />
+      </main>
     </>
   );
 }

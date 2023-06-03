@@ -80,7 +80,7 @@ function Login() {
           className="w-[4.5rem] mt-4"
         />
       </header>
-      <div className="flex justify-center items-center flex-col sm:w-[20%] md:w-[40%] lg:w-[30%] ">
+      <div className="flex justify-center items-center flex-col sm:w-[30%] md:w-[50%] lg:w-[25%] w-[70%] ">
         <h1 className="text-4xl font-bold text-textColor text-center">
           Welcome Back
         </h1>
