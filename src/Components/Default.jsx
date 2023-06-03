@@ -3,9 +3,9 @@ import React from "react";
 function Default(props) {
   const { setPromptValue } = props;
   return (
-    <div className="flex justify-center items-center flex-col">
+    <div className="flex justify-center items-center flex-col w-full">
       <div className="text-4xl w-full text-center font-bold my-10">ChatGPT</div>
-      <div className="itemsrow flex py-4 justify-around my-6 shortcuts w-[55%] sm:w-[60%]">
+      <div className="itemsrow flex py-4 justify-around shortcuts w-[55%] sm:w-[60%]">
         <div className="examples flex flex-col justify-center items-center mr-3 ">
           <svg
             stroke="currentColor"

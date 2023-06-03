@@ -11,7 +11,7 @@ function Chat(props) {
   return (
     <>
       <main
-        className="w-[100%] min-h-[32rem] flex flex-col justify-start mt-10 mb-4"
+        className="w-[100%] min-h-[29rem] flex flex-col justify-start mt-10 mb-4"
         id="chatElement"
       >
         <div className="w-full hover:bg-gray-700 hover:trasition duration-75 ease-in-out">
