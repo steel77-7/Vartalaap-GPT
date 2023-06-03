@@ -3,10 +3,10 @@ import React from "react";
 function Default(props) {
   const { setPromptValue } = props;
   return (
-    <div>
-      <div className="text-4xl w-full text-center font-bold my-5">ChatGPT</div>
-      <div className="itemsrow flex py-4 w-[43vw] justify-around my-10">
-        <div className="examples flex flex-col justify-center items-center">
+    <div className="flex justify-center items-center flex-col w-full">
+      <div className="text-4xl w-full text-center font-bold my-10">ChatGPT</div>
+      <div className="itemsrow flex py-4 justify-around shortcuts w-[55%] sm:w-[60%]">
+        <div className="examples flex flex-col justify-center items-center mr-3 ">
           <svg
             stroke="currentColor"
             fill="none"
@@ -29,35 +29,37 @@ function Default(props) {
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
-          <div className="py-4">Examples</div>
-          <button
-            className="bg-gray-600 hover:bg-gray-700 px-4 py-4 my-2 mx-4 rounded-md w-[16vw] text-sm"
-            onClick={() => {
-              setPromptValue("Explain quantum computing in simple terms");
-            }}
-          >
-            "Explain quantum computing in simple terms" →
-          </button>
-          <button
-            className="bg-gray-600 hover:bg-gray-700 px-4 py-4 my-2 mx-4 rounded-md w-[16vw] text-sm"
-            onClick={() => {
-              setPromptValue(
-                "Got any creative ideas for a 10 year old’s birthday?"
-              );
-            }}
-          >
-            "Got any creative ideas for a 10 year old’s birthday?" →
-          </button>
-          <button
-            className="bg-gray-600 hover:bg-gray-700 px-4 py-4 my-2 mx-4 rounded-md w-[16vw] text-sm"
-            onClick={() => {
-              setPromptValue("How do I make an HTTP request in Javascript?");
-            }}
-          >
-            "How do I make an HTTP request in Javascript?" →
-          </button>
+          <p className="py-4">Examples</p>
+          <div className="flex justify-center items-center flex-col w-full ">
+            <button
+              className="bg-gray-600 hover:bg-gray-700 px-4 py-4 my-2 mx-4 rounded-md w-full text-sm shortcut-text"
+              onClick={() => {
+                setPromptValue("Explain quantum computing in simple terms");
+              }}
+            >
+              "Explain quantum computing in simple terms" →
+            </button>
+            <button
+              className="bg-gray-600 hover:bg-gray-700 px-4 py-4 my-2 mx-4 rounded-md w-full text-sm shortcut-text"
+              onClick={() => {
+                setPromptValue(
+                  "Got any creative ideas for a 10 year old’s birthday?"
+                );
+              }}
+            >
+              "Got any creative ideas for a 10 year old’s birthday?" →
+            </button>
+            <button
+              className="bg-gray-600 hover:bg-gray-700 px-4 py-4 my-2 mx-4 rounded-md w-full text-sm shortcut-text"
+              onClick={() => {
+                setPromptValue("How do I make an HTTP request in Javascript?");
+              }}
+            >
+              "How do I make an HTTP request in Javascript?" →
+            </button>
+          </div>
         </div>
-        <div className="cap flex flex-col justify-center items-center">
+        <div className="cap flex flex-col justify-center items-center mr-3 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -73,18 +75,20 @@ function Default(props) {
               d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
             ></path>
           </svg>
-          <div className="py-4">Capabilities</div>
-          <button className="bg-gray-600 px-4 py-4 my-2 cursor-default mx-4 rounded-md w-[16vw] text-sm">
-            Remembers what user said earlier in the conversation
-          </button>
-          <button className="bg-gray-600 px-4 py-4 my-2 cursor-default mx-4 rounded-md w-[16vw] text-sm">
-            Allows user to provide follow-up corrections
-          </button>
-          <button className="bg-gray-600 px-4 py-4 my-2 cursor-default mx-4 rounded-md w-[16vw] text-sm">
-            Trained to decline inappropriate requests
-          </button>
+          <p className="py-4">Capabilities</p>
+          <div className="flex justify-center items-center flex-col w-full ">
+            <button className="bg-gray-600 px-4 py-4 my-2 cursor-default mx-4 rounded-md w-full text-sm shortcut-text">
+              Remembers what user said earlier in the conversation
+            </button>
+            <button className="bg-gray-600 px-4 py-4 my-2 cursor-default mx-4 rounded-md w-full text-sm shortcut-text">
+              Allows user to provide follow-up corrections
+            </button>
+            <button className="bg-gray-600 px-4 py-4 my-2 cursor-default mx-4 rounded-md w-full text-sm shortcut-text">
+              Trained to decline inappropriate requests
+            </button>
+          </div>
         </div>
-        <div className="lim flex flex-col justify-center items-center">
+        <div className="lim flex flex-col justify-center items-center ">
           <svg
             stroke="currentColor"
             fill="none"
@@ -101,16 +105,18 @@ function Default(props) {
             <line x1="12" y1="9" x2="12" y2="13"></line>
             <line x1="12" y1="17" x2="12.01" y2="17"></line>
           </svg>
-          <div className="py-4">Limitations</div>
-          <button className="bg-gray-600 cursor-default px-4 py-4 my-2 mx-4 rounded-md w-[16vw] text-sm">
-            May occasionally generate incorrect information
-          </button>
-          <button className="bg-gray-600 cursor-default px-4 py-4 my-2 mx-4 rounded-md w-[16vw] text-sm">
-            May occasionally produce harmful instructions or biased content
-          </button>
-          <button className="bg-gray-600 cursor-default px-4 py-4 my-2 mx-4 rounded-md w-[16vw] text-sm">
-            Limited knowledge of world and events after 2021
-          </button>
+          <p className="py-4">Limitations</p>
+          <div className="flex justify-center items-center flex-col w-full ">
+            <button className="bg-gray-600 cursor-default px-4 py-4 my-2 mx-4 rounded-md w-full text-sm shortcut-text">
+              May occasionally generate incorrect information
+            </button>
+            <button className="bg-gray-600 cursor-default px-4 py-4 my-2 mx-4 rounded-md w-full text-sm shortcut-text">
+              May occasionally produce harmful instructions or biased content
+            </button>
+            <button className="bg-gray-600 cursor-default px-4 py-4 my-2 mx-4 rounded-md w-full text-sm shortcut-text">
+              Limited knowledge of world and events after 2021
+            </button>
+          </div>
         </div>
       </div>
     </div>

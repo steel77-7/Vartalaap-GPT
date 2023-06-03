@@ -55,7 +55,7 @@ function OAuth() {
 
   return (
     <button
-      className="w-[25rem] bg-bgColor text-textColor px-7 py-3 text-sm font-medium uppercase border rounded shadow-md transition duration-150 mt- hover:shadow-lg flex justify-center items-center"
+      className="w-full bg-bgColor text-textColor px-7 py-3 text-sm font-medium uppercase border rounded shadow-md transition duration-150 mt- hover:shadow-lg flex justify-center items-center"
       type="button]"
       onClick={onClick}
     >

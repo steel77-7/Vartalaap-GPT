@@ -1,4 +1,6 @@
 import React from "react";
+import SendIcon from "@mui/icons-material/Send";
+import { Link } from "react-router-dom";
 
 function Input(props) {
   const {
@@ -17,59 +19,44 @@ function Input(props) {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    setChatLoader(true)
+    setChatLoader(true);
     setRenderChat(true);
     setQuestion(promptValue);
     let a = await generateText(promptValue);
     setAnswer(a);
-    setChatLoader(false)
+    setChatLoader(false);
   };
 
   return (
     <>
-      <div className="input w-full text-center ">
-        <form onSubmit={onSubmit}>
-          <input
-            type="text"
-            className="w-[50%] dark:shadow-[0_0_15px_rgba(0,0,0,0.10)] shadow-[0_0_10px_rgba(0,0,0,0.10)] p-2 bg-transparent overflow-y-hidden rounded-md outline-none"
-            placeholder="Send a message"
-            value={promptValue}
-            onChange={onChange}
-          />
-          <button
-            className="relative -left-20 p-10"
-            type="submit"
-            disabled={promptValue.length === 0}
-          >
-            <svg
-              stroke="currentColor"
-              fill="none"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-4 w-4 mr-1"
-              height="1em"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+      <div className="input flex justify-center items-center flex-col text-white sm:w-[70%] md:w-[50%] lg:w-[45%] w-[100%]">
+        <div className="w-[100%]">
+        <form
+          onSubmit={onSubmit}
+        >
+          <div className="relative ">
+            <textarea
+              value={promptValue}
+              onChange={onChange}
+              className="dark:shadow-[0_0_15px_rgba(0,0,0,0.10)] shadow-[0_0_10px_rgba(0,0,0,0.10)] p-2 bg-transparent overflow-x-hidden rounded-md outline-none w-full h-[2.75rem]"
+              placeholder="Send a message"
+              required
+            />
+            <button
+              className="absolute right-[1rem] top-[0.25rem]"
+              type="submit"
+              disabled={promptValue.length === 0}
             >
-              <line x1="22" y1="2" x2="11" y2="13"></line>
-              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-            </svg>
-          </button>
+              <SendIcon />
+            </button>
+          </div>
         </form>
-        <div className="text-sm">
-          <p className="opacity-70">
+        </div>
+        <div className="text-sm mt-7">
+          <p className="opacity-70 text-center">
             Free Research Preview. ChatGPT may produce inaccurate information
             about people, places, or facts.
-            <a
-              href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
-              target="_blank"
-              className="underline"
-            >
-              {" "}
-              ChatGPT May 24 Version
-            </a>
+            <Link to="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank"> ChatGPT May 24 Version</Link>
           </p>
         </div>
       </div>
