@@ -75,30 +75,28 @@ const SignUp = () => {
     }
   };
 
-  if (loading  || checkingStatus) {
+  if (loading || checkingStatus) {
     return <Spinner />;
   }
 
   if (loggedin === true && checkingStatus === false) {
     return <Home />;
   }
-  
-    return (
-      <main className="bg-white text-black w-[100%] h-[100vh] ">
-        <header className="flex justify-center items-center mb-16">
-          <img
-            src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ0J_WUW3a11ND1TGZzbRPS36dxxKl-R9LOyA7zfacg-6Hi9040"
-            className="w-[4.5rem] mt-4"
-          />
-        </header>
-        <div className="flex justify-center items-center flex-col mt-28 ">
-          <h1 className="text-4xl font-bold text-textColor">
-            Create Your Account
-          </h1>
-          <form
-            className="flex justify-center items-center flex-col w-full"
-            onSubmit={handleSubmit}
-          >
+
+  return (
+    <main className="bg-white text-black w-[100%] h-[100vh] flex justify-center items-center flex-col">
+      <header className="flex justify-center items-center mb-16">
+        <img
+          src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ0J_WUW3a11ND1TGZzbRPS36dxxKl-R9LOyA7zfacg-6Hi9040"
+          className="w-[4.5rem] mt-4"
+        />
+      </header>
+      <div className="flex justify-center items-center flex-col sm:w-[30%] md:w-[50%] lg:w-[25%] w-[70%]">
+        <h1 className="text-4xl font-bold text-textColor text-center">
+          Create Your Account
+        </h1>
+        <div className="w-[100%]">
+          <form onSubmit={handleSubmit}>
             <input
               id="name"
               value={name}
@@ -106,7 +104,7 @@ const SignUp = () => {
               type="text"
               required
               placeholder="Enter your name"
-              className="bg-bgColor mt-5 w-[25rem] px-2 py-3  rounded-sm  outline-none inp"
+              className="bg-bgColor mt-5 w-full px-2 py-3  rounded-sm  outline-none inp"
             />
             <input
               id="email"
@@ -115,12 +113,12 @@ const SignUp = () => {
               type="email"
               required
               placeholder="Email Address"
-              className="bg-bgColor mt-5 w-[25rem] px-2 py-3  rounded-sm  outline-none inp"
+              className="bg-bgColor mt-5 w-full px-2 py-3  rounded-sm  outline-none inp"
             />
             <div className="relative">
               <input
                 type={setpassword ? "text" : "password"}
-                className="bg-bgColor mt-5 w-[25rem] px-2 py-3  rounded-sm  outline-none inp"
+                className="bg-bgColor mt-5 w-full px-2 py-3  rounded-sm  outline-none inp"
                 placeholder="Password"
                 id="password"
                 min={8}
@@ -144,24 +142,25 @@ const SignUp = () => {
             </div>
             <button
               type="submit"
-              className="mt-4 bg-btnColor hover:bg-hoverbtnColor mx-2 text-white font-semibold py-2 px-4 rounded w-[25rem]"
+              className="mt-4 bg-btnColor hover:bg-hoverbtnColor text-white font-semibold py-2 px-4 rounded w-full"
             >
               Sign up
             </button>
           </form>
-          <p className="text-center text-sm mt-2">
-            Already have an account?{" "}
-            <Link to="/login" className="text-btnColor">
-              Login
-            </Link>{" "}
-          </p>
-          <div className="my-4 flex  items-center before:border-t  before:flex-1  before:border-gray-800 after:border-t  after:flex-1  after:border-gray-800">
-            <p className="text-center text-sm mx-4">OR</p>
-          </div>
-          <OAuth />
         </div>
-      </main>
-    );
+        <p className="text-center text-sm mt-2">
+          Already have an account?{" "}
+          <Link to="/login" className="text-btnColor">
+            Login
+          </Link>{" "}
+        </p>
+        <div className="my-4 flex items-center before:border-t  before:flex-1  before:border-gray-800 after:border-t  after:flex-1  after:border-gray-800">
+          <p className="text-center text-sm">OR</p>
+        </div>
+        <OAuth />
+      </div>
+    </main>
+  );
 };
 
 export default SignUp;
