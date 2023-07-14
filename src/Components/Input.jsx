@@ -29,7 +29,7 @@ function Input(props) {
 
   return (
     <>
-      <div className="input flex justify-center items-center flex-col text-white sm:w-[70%] md:w-[50%] lg:w-[45%] w-[100%]">
+      <div className="input flex justify-center items-center flex-col text-white sm:w-[70%] md:w-[50%] lg:w-[45%] w-[80%]">
         <div className="w-[100%]">
         <form
           onSubmit={onSubmit}
