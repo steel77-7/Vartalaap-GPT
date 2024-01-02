@@ -19,7 +19,7 @@ function Home() {
   const auth = getAuth();
   const navigate = useNavigate();
   const [promptValue, setPromptValue] = useState("");
-  const { generateText, Loading } = context;
+  const { generateText } = context;
 
   const onLogout = () => {
     try {

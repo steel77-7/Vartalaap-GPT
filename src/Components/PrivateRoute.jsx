@@ -2,7 +2,7 @@
 import React from "react";
 
 // Imports from react router dom
-import { Outlet, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 // Importing custom hook
 import { useAuthStatus } from "../hooks/useAuthStatus";
